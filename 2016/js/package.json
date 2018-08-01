@@ -1,0 +1,20 @@
+{
+  "name": "2016-advent-of-code",
+  "description": "2016 Advent Of Code written in JS",
+  "author": "Simon Fletcher <simonfletcher0@gmail.com>",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha \"day-*/**/*.spec.js\" --resursive --compilers js:babel-core/register",
+    "test:watch": "mocha \"day-*/**/*.spec.js\" --resursive --compilers js:babel-core/register --watch --growl"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ]
+  },
+  "devDependencies": {
+    "babel-register": "^6.18.0",
+    "mocha": "^3.2.0"
+  }
+}
