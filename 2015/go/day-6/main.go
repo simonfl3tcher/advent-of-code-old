@@ -1,9 +1,11 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
+	"regexp"
 )
+
+var regex = regexp.MustCompile(`^(?P<Command>.*)\s(?P<Start>\d*,\d*)\sthrough\s(?P<End>\d*,\d*)$`)
 
 func main() {
 	data, err := ioutil.ReadFile("input.txt")
@@ -11,10 +13,6 @@ func main() {
 		panic(err)
 	}
 
-	Part1(string(data))
-}
-
-// Part1 solves part 1 of day 6
-func Part1(str string) {
-	fmt.Println("Start right here!")
+	Part1(string(data), regex)
+	Part2(string(data), regex)
 }
